@@ -1,5 +1,6 @@
+//closure
 var count = 0;
-var myObj = {
+var counter = {
   count: 0,
   visit: function () {
     // 방문자를 한명 증가시킨다.
@@ -11,6 +12,6 @@ var myObj = {
   },
 };
 
-myObj.visit();
-myObj.visit();
+counter.visit();
+counter.visit();
 console.log("합계", myObj.count);

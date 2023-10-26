@@ -13,7 +13,7 @@ function smallest(nums) {
     // if (min > nums[i]) min = nums[i];
     min = Math.min(min, nums[i]);
   }
-  return min;
+  //return min;
   // return Math.min.apply(this, nums);
   return Math.min(...nums);
 }
