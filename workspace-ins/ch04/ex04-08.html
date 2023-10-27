@@ -12,8 +12,24 @@
     var btns = document.querySelectorAll('button');
     // IIFE pattern
 		for(var i=0; i<btns.length; i++){
+      (function(i){
+        btns[i].addEventListener('click', function(){
+          console.log(`btn-${i} 클릭`);
+        });
+      })(i);
+		}
+
+    // ES5 forEach()
+    btns.forEach(function(elem, i){
+      elem.addEventListener('click', function(){
+        console.log(`btn-${i} 클릭`);
+      });
+    });
+
+    // ES6 let
+    for(let i=0; i<btns.length; i++){
       btns[i].addEventListener('click', function(){
-        
+        console.log(`btn-${i} 클릭`);
       });
 		}
 	};
