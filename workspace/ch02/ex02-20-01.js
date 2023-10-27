@@ -34,6 +34,7 @@ todolist.forEach(function (element) {
     doneList.push(element);
   }
 });
+todolist.forEach((todo) => (todo.done ? doneList.push(todo) : 0));
 console.log("forEach() 완료된 할일 목록", doneList);
 
 // filter() 완료된 할일 목록
@@ -43,17 +44,20 @@ var doneList = todolist.filter(function (element) {
 console.log("filter() 완료된 할일 목록", doneList);
 
 // map() 남은 할일 목록 // 다시
-var reaminList = todolist.map(function (element) {
-  if (element.done === false) return element;
-  return;
-});
+var reaminList = todolist
+  .map(function (element) {
+    if (element.done === false) return element;
+    return null;
+  })
+  .filter((element) => element != null);
 console.log("map() 남은 할일 목록", reaminList);
 
 // reduce() 남은 할일 수
-var reaminCount = todolist.reduce(function (acc, cur) {
-  if (cur.done === false) acc.push(cur);
-  return acc;
-}, []);
+// var reaminCount = todolist.reduce(function (acc, cur) {
+//   if (cur.done === false) acc.push(cur);
+//   return acc;
+// }, []);
+var reaminCount = todolist.reduce((acc, todo) => acc + (todo.done ? 0 : 1), 0);
 console.log("reduce() 남은 할일 수", reaminCount);
 
 // find() _id=2인 할일
