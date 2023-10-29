@@ -34,13 +34,19 @@
 
     btn3.addEventListener('click', () => {
       // 첫번째 삭제
-      var list = document.querySelector('.list');
+      var list = document.querySelectorAll('.list');
       for(let i=0; i<list.length; i++){
         var firstLi = list[i].firstElementChild;
-        if(firstLi);
-        firstLi.remove();
-      }
+        removeNode(firstLi);
+        console.log(firstLi.firstChild.nodeValue, '삭제.');
+      }      
     });
+
+    function removeNode(elem){
+      if(elem){
+        elem.remove();
+      }
+    }
   });
 </script>
 </head>

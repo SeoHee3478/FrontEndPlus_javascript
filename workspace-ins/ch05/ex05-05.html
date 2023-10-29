@@ -23,7 +23,7 @@
           const data = response.data;
           append(data);
         } catch (err) {
-          console.log(err);
+          console.error(err);
         }
       }
 
@@ -39,9 +39,9 @@
             body
           );
           const data = response.data;
-          appendJson(data);
+          append(data);
         } catch (err) {
-          console.log(err);
+          console.error(err);
         }
       }
 

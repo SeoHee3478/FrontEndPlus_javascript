@@ -13,9 +13,6 @@ http.createServer(function (req, res) {
     case '/time':
       responseTime(req, res);
       break;
-    case '/time-sync':
-      responseTime(req, res);
-      break;
     case '/timejson':
       responseTimeJson(req, res);
       break;
